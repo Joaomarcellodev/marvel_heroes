@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Marvel Heroes',
         theme: ThemeData(primarySwatch: Colors.red),
+        debugShowCheckedModeBanner: false,
         home: HeroListView(),
       ),
     );
