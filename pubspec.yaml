@@ -10,6 +10,7 @@ dependencies:
   provider: ^6.1.1
   crypto: ^3.0.3
   cupertino_icons: ^1.0.2
+  flutter_dotenv: ^5.0.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

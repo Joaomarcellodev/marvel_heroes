@@ -5,9 +5,9 @@ import '../models/hero_model.dart';
 
 class ApiService {
   final String baseUrl = 'https://gateway.marvel.com/v1/public';
-  final String publicKey = 'YOUR_PUBLIC_KEY';
-  final String privateKey = 'YOUR_PRIVATE_KEY';
-  final List<HeroModel> _mockLocalHeroes = []; // Armazenamento simulado
+  final String publicKey = '8207a6a84b550fd8e0093e8651212604';
+  final String privateKey = '1affa5a7f877c8379d8d0e55402bce78301cdc83';
+  final List<HeroModel> _mockLocalHeroes = []; 
 
   String _generateHash(String timestamp) {
     return md5.convert(utf8.encode(timestamp + privateKey + publicKey)).toString();
@@ -32,9 +32,9 @@ class ApiService {
     }
   }
 
-  // POST: Simula adição de herói
+  
   Future<HeroModel> addHero(HeroModel hero) async {
-    await Future.delayed(Duration(seconds: 1)); // Simula latência
+    await Future.delayed(Duration(seconds: 1)); 
     _mockLocalHeroes.add(hero);
     return hero;
   }
