@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'Marvel Heroes',
+        title: 'Heroes App',  // Nome genérico para seu app
         theme: ThemeData(primarySwatch: Colors.red),
         debugShowCheckedModeBanner: false,
         home: HeroListView(),

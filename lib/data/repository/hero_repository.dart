@@ -14,5 +14,5 @@ class HeroRepository {
 
   Future<void> deleteHero(int id) => _apiService.deleteHero(id);
 
-  List<HeroModel> getLocalHeroes() => _apiService.getLocalHeroes();
+  // Removi o getLocalHeroes porque não existe mais no ApiService
 }

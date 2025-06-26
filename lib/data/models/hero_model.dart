@@ -13,10 +13,10 @@ class HeroModel {
 
   factory HeroModel.fromJson(Map<String, dynamic> json) {
     return HeroModel(
-      id: json['id'],
-      name: json['name'],
+      id: int.parse(json['id'].toString()),  // mockapi retorna id como string
+      name: json['name'] ?? 'Sem nome',
       description: json['description'] ?? 'Sem descrição disponível',
-      thumbnail: json['thumbnail']['path'] + '.' + json['thumbnail']['extension'],
+      thumbnail: json['thumbnail'] ?? 'https://via.placeholder.com/150',  // URL direta da imagem
     );
   }
 

@@ -14,7 +14,7 @@ class HeroListView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Heróis da Marvel',
+          'Lista de Heróis',  // Ajustado para ficar genérico
           style: TextStyle(
             fontWeight: FontWeight.w700,
             fontSize: 26,
@@ -57,7 +57,7 @@ class HeroListView extends StatelessWidget {
           ),
           SizedBox(height: 20),
           Text(
-            'Carregando heróis da Marvel...',
+            'Carregando heróis...',
             style: TextStyle(
               fontSize: 16,
               color: theme.textTheme.bodyMedium?.color?.withOpacity(0.7),

@@ -18,7 +18,7 @@ class HeroViewModel extends ChangeNotifier {
 
     try {
       heroes = await _repository.fetchHeroes();
-      heroes.addAll(_repository.getLocalHeroes()); 
+      // Removido: não usamos mais getLocalHeroes()
       state = ViewState.idle;
     } catch (e) {
       state = ViewState.error;
@@ -33,13 +33,16 @@ class HeroViewModel extends ChangeNotifier {
 
     try {
       final newHero = HeroModel(
-        id: DateTime.now().millisecondsSinceEpoch, 
+        id: 0, // id provisório, pois será gerado pela API
         name: name,
         description: description,
         thumbnail: thumbnail.isEmpty ? 'https://via.placeholder.com/150' : thumbnail,
       );
-      await _repository.addHero(newHero);
-      heroes.add(newHero);
+
+      final addedHero = await _repository.addHero(newHero);
+
+      // Adiciona o herói retornado com o ID gerado pela API
+      heroes.add(addedHero);
       state = ViewState.idle;
     } catch (e) {
       state = ViewState.error;
